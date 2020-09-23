@@ -1,7 +1,6 @@
 Category
 - name
 - videos    (one-to-many of Video)
-- rank ()
 
 Video
 - Title
@@ -11,3 +10,4 @@ Video
 Rank
 - degree
 - color
+- categories (many-to-many of Category)
