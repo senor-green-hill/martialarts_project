@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <h1>Syllabi</h1>
+        {% for object in object_list %}
+            <a href="{{ object.id }}">{{ object }}</a><br>
+        {% endfor %}
+{% endblock content %}

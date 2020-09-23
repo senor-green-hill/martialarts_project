@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8">
+        <title>
+            {% block title %}
+            {{ page_title|default:"Untitled Page" }}
+            {% endblock title %} - Central Maryland Martial Arts
+        </title>
+    </head>
+
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+
+    <body>
+        <div id="wrapper">
+            {% block header %}{% endblock header %}
+            
+            {% block side_bar %}{% endblock side_bar %}
+
+            <section id="main">
+                {% block content %}
+                <p>Placeholder text in base template. Replace with page content.</p>
+                {% endblock content %}
+            </section>
+
+            <footer id="footer"><!--Created 
+                <script type="text/JavaScript">
+                    document.write(new Date().getFullYear());
+                </script>by Juan Rodriguez-->
+            </footer>
+        </div>
+    </body>
+</html>

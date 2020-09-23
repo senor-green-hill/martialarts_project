@@ -1,0 +1,5 @@
+env_martialarts/
+logs/
+*.pyc
+db.sqlite3
+*.mp4
