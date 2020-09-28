@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'requirements.apps.RequirementsConfig',
     'syllabi.apps.SyllabiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
