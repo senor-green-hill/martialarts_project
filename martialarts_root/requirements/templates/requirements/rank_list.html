@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h1>Requirements</h1>
+        {% for object in object_list %}
+            <a href="/requirements/rank/{{ object.id }}">{{ object }}</a><br>
+        {% endfor %}
+{% endblock content %}
