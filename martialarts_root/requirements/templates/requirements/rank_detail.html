@@ -12,10 +12,10 @@
         The following for-loops should grab each category in a Rank,
         and then each requirement under that specific rank-category.
     {% endcomment %}
-    {% for category in object.rank_categories %}
+    {% for category in object.categories %}
         <br><!--a href="{{ category.id }}"--><b>{{ category.name }}:</b><!--/a-->
 
-        {% for requirement in category.cat_requirements %}
+        {% for requirement in category.requirements %}
             <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">{{ requirement.title }}</a>
         {% endfor %}
         <br>

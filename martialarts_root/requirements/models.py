@@ -38,8 +38,7 @@ class Requirement (models.Model):
 
     @property
     def media(self):
-        return self.media_set.all().order_by('position
-        ')
+        return self.media_set.all().order_by('position')
 
 # Images, videos, etc. associated with a particular requirement.
 class Media (models.Model):
