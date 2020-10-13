@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ object.title }}</h1>
+    <br>{{ object.desc }}
+    
+    {% for media in requirement.media %}
+        {% if ".mp4" in media.file_name %}
+            <br><video controls src="{% static media.file_name %}" width="600" height="400"></video>
+        {% endif %}
+        {% if ".jpg" in media.file_name %}
+            <br><img src="{% static media.file_name %}" alt="{{ media.requirement }} {{ media.file_name }}" width="600" height="400">
+        {% endif %}
+    {% endfor %}
+{% endblock content %}

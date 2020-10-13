@@ -9,8 +9,8 @@
     </center>
     <br><br>
     {% comment %}
-        The following for-loops should grab each category in a Rank,
-        and then each requirement under that specific rank-category.
+        The following for-loops should list each category in a Rank,
+        and then each requirement under that specific rank's category.
     {% endcomment %}
     {% for category in object.categories %}
         <br><!--a href="{{ category.id }}"--><b>{{ category.name }}:</b><!--/a-->
