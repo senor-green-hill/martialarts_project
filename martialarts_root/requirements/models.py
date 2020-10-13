@@ -48,4 +48,4 @@ class Media (models.Model):
     position    = models.IntegerField()
 
     def __str__(self):
-        return "%s %s" % (self.requirement, self.file_name)
+        return self.file_name

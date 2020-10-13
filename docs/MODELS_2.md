@@ -3,19 +3,21 @@ Rank
 - color
 - eligibility
 - position
-- categories    (many-to-many of Category)
 
 Category
 - name
-- requirements        (one-to-many of Requirements)
+- rank        (Foreign Key of Rank)
 - position
 
 Requirement
 - Title
-- Video URL
-- Description of the video
+- Description
 - position
+- category            (Foreign Key of Category)
 
+Media
+- File Name
+-
 
 
 Stuff for later down the line:
@@ -41,6 +43,6 @@ Schedule page
 
 Online Payments
 
-Android/iPhone app(!!!!!!!!!!!!!)
+Android/iPhone app(!!!!!!!!!!!!)
 
 GoDaddy did the old website.

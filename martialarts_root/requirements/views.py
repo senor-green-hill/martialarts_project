@@ -19,6 +19,6 @@ class CategoryDetailView(DetailView):
     model = Category
     pk_url_kwarg = 'category_id'
 
-class RequirementDetailView(DetailView):
+class RequirementDetailView(LoginRequiredMixin, DetailView):
     model = Requirement
     pk_url_kwarg = 'requirement_id'
