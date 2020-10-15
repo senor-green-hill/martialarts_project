@@ -4,9 +4,11 @@
     <aside id="rightsidebar">
         <nav id="nav">
             <ul>
-                <li>Menu 1</li>
-                <li>Menu 2</li>
-                <li>Menu 3</li>
+                {% block side_bar_content %}
+                    <li>Menu 1</li>
+                    <li>Menu 2</li>
+                    <li>Menu 3</li>
+                {% endblock side_bar_content %}
             </ul>
         </nav>
     </aside>

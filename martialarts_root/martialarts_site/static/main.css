@@ -1,6 +1,7 @@
 @charset "utf-8";
-#header {
-    border-style: none;
+#header
+{
+    border-style: dashed;
     width: 800px;
     height: auto;
 }
@@ -12,6 +13,7 @@
     margin-right: auto;
     background-color: #ffffff;
     width: 800px;
+    border-style: dashed;
 }
 
 body
@@ -42,44 +44,26 @@ h1
 
 #nav li
 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 1em;
-    list-style-type: none;
-    border-bottom: thin solid #e0e0e0;
-    color: #1e9d36;
-    left: 0px;
-    list-style-position: inside;
 }
 
 #nav li a
 {
-    text-decoration: none;
 }
 
 #rightsidebar
 {
-    width: 180px;
-    height: 350px;
-    float: right;
-    padding-right: 20px;
 }
 
-#main {
-    width: 560px;
-    float: left;
-    margin: 0 10px 50px 20px;
-    padding-right: 10px;
+#main
+{
 }
 
-#logo {
+#logo
+{
     padding: 10px;
     float: left;
 }
 
-#top_menu {
-    float: right;
-    padding: 50px 20px 0px 0px;
-    font-size: 1.2em;
-    color: 20px;
+#top_menu
+{
 }

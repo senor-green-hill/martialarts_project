@@ -40,6 +40,13 @@ Home page
 
 Schedule page
 - class times
+- email notifications
+
+Gallery
+
+FIMAP
+
+Tai Chi
 
 Online Payments
 
