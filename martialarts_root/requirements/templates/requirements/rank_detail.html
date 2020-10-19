@@ -2,9 +2,15 @@
 
 {% block title %}{{ object }}{% endblock title %}
 
+{% block req_history %}
+    <div id="links">
+        <a href="/requirements/rank/{{ rank.id }}">{{ object }}</a>
+    </div>
+{% endblock req_history %}
+
 {% block req_header %}
     <h1>{{ object.degree }} {{ object }}</h1>
-    <br>{{ object.eligibility }}
+    <p id="eligibility">{{ object.eligibility }}</p>
 {% endblock req_header %}
 
 <br><br>

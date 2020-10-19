@@ -41,6 +41,7 @@ Home page
 Schedule page
 - class times
 - email notifications
+- newsletter?
 
 Gallery
 
