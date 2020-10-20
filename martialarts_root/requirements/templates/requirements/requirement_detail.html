@@ -5,7 +5,7 @@
 
 {% block req_header %}
     <h1>{{ object.title }}</h1>
-    <br>{{ object.desc }}
+    {% comment %}{{ object.desc }}{% endcomment %}
 {% endblock req_header %}
 
 {% block req_content %}
