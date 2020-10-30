@@ -5,4 +5,4 @@ db.sqlite3
 *.mp4
 *.png
 *.jpg
-martialarts_project/martialarts_root/martialarts_site/settings.py
+martialarts_root/martialarts_site/settings.py
