@@ -1,10 +1,11 @@
 from django.db import models
 
 class Rank (models.Model):
+    slug        = models.SlugField()
     degree       = models.CharField(max_length = 20)
     color        = models.CharField(max_length = 20)
     position     = models.IntegerField()
-    eligibility  = models.TextField(blank = True)
+    #eligibility  = models.TextField(blank = True)
 
     def __str__(self):
         return self.color
@@ -12,9 +13,19 @@ class Rank (models.Model):
     @property
     def categories(self):
         return self.category_set.all().order_by('position')
+    
+    @property
+    def rank_elegibility(self):
+        return self.elegibility_set.all().order_by('position')
+
+class Eligibility (models.Model):
+    summary     = models.CharField(max_length = 20)
+    position    = models.IntegerField()
+    desc        = models.TextField(blank = True)
         
 # Categories for a Rank. (i.e. Yellow Belt Hand Techniques, Black Belt Hand Techniques)
 class Category (models.Model):
+    slug            = models.SlugField()
     name            = models.CharField(max_length=20)
     position        = models.IntegerField()
     rank = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
@@ -28,6 +39,7 @@ class Category (models.Model):
 
 # Individual requirements (i.e. Ki Cho 4, Middle Block, Horse Kick, etc.)
 class Requirement (models.Model):
+    slug        = models.SlugField()
     title       = models.CharField(max_length=20)
     position    = models.IntegerField()
     desc        = models.TextField(blank = True)
