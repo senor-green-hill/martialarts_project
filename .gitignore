@@ -6,4 +6,4 @@ db.sqlite3
 *.png
 *.jpg
 martialarts_root/martialarts_site/settings.py
-requirements/migrations/
+migrations/
