@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Requirement, Category, Rank, Media
+from .models import Requirement, Category, Rank, Media, Eligibility
 
 # Register your models here.
 admin.site.register(Requirement)
