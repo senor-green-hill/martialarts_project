@@ -1,7 +1,7 @@
 from django.db import models
 
 class Rank (models.Model):
-    slug        = models.SlugField()
+    slug        = models.SlugField(blank = True)
     degree       = models.CharField(max_length = 20)
     color        = models.CharField(max_length = 20)
     position     = models.IntegerField()
