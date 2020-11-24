@@ -40,7 +40,7 @@ class Category (models.Model):
 # Individual requirements (i.e. Ki Cho 4, Middle Block, Horse Kick, etc.)
 class Requirement (models.Model):
     slug        = models.SlugField(blank = True)
-    title       = models.CharField(max_length=20)
+    title       = models.CharField(max_length=100)
     position    = models.IntegerField()
     desc        = models.TextField(blank = True)
     category    = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
