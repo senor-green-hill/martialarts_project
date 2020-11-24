@@ -46,7 +46,7 @@ class Requirement (models.Model):
     category    = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.title
+        return "%s: %s" % (self.category, self.title)
 
     @property
     def media(self):
