@@ -3,8 +3,6 @@ logs/
 *.pyc
 db.sqlite3
 *.mp4
-*.png
-*.jpg
 martialarts_root/martialarts_site/settings.py
 migrations/
 martialarts_root/martialarts_site/static/admin/
