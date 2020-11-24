@@ -1,3 +1,4 @@
+.vscode
 env_martialarts/
 logs/
 *.pyc
