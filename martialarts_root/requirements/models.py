@@ -25,7 +25,7 @@ class Eligibility (models.Model):
         
 # Categories for a Rank. (i.e. Yellow Belt Hand Techniques, Black Belt Hand Techniques)
 class Category (models.Model):
-    slug            = models.SlugField()
+    slug            = models.SlugField(blank = True)
     name            = models.CharField(max_length=20)
     position        = models.IntegerField()
     rank = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
@@ -39,7 +39,7 @@ class Category (models.Model):
 
 # Individual requirements (i.e. Ki Cho 4, Middle Block, Horse Kick, etc.)
 class Requirement (models.Model):
-    slug        = models.SlugField()
+    slug        = models.SlugField(blank = True)
     title       = models.CharField(max_length=20)
     position    = models.IntegerField()
     desc        = models.TextField(blank = True)
