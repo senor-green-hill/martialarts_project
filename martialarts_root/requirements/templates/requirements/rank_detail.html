@@ -25,7 +25,9 @@
         <br><!--a href="{{ category.id }}"--><b>{{ category.name }}:</b><!--/a-->
 
         {% for requirement in category.requirements %}
-            <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">{{ requirement.title }}</a>
+            <br><a {% comment %} href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}" {% endcomment %}>
+                    {{ requirement.title }}
+                </a>
         {% endfor %}
         <br>
     {% endfor %}
