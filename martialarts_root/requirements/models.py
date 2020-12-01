@@ -39,7 +39,7 @@ class Rank (models.Model):
         return self.elegibility_set.all().order_by('position')
 
     @property
-    def category(self):
+    def categories(self):
         return self.category_set.all().order_by('position')
 
 class Eligibility (models.Model):
