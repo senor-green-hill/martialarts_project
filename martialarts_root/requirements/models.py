@@ -8,7 +8,7 @@ class Requirement (models.Model):
     desc        = models.TextField(blank = True)
 
     def __str__(self):
-        return "%s: %s" % (self.category, self.title)
+        return self.title
 
     @property
     def media(self):
@@ -23,40 +23,46 @@ class Media (models.Model):
 
     def __str__(self):
         return self.file_name
-        
+
+
+class Rank (models.Model):
+    slug         = models.SlugField(blank=True)
+    degree       = models.CharField(max_length = 20)
+    color        = models.CharField(max_length = 20)
+    position     = models.IntegerField()
+
+    def __str__(self):
+        return self.color
+    
+    @property
+    def rank_elegibility(self):
+        return self.elegibility_set.all().order_by('position')
+
+    @property
+    def category(self):
+        return self.category_set.all().order_by('position')
+
+class Eligibility (models.Model):
+    summary     = models.CharField(max_length = 20)
+    position    = models.IntegerField()
+    desc        = models.TextField(blank = True)
+    rank        = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return "%s %s" % (self.rank, self.summary)
+
+
 # Categories for a Rank. (i.e. Yellow Belt Hand Techniques, Black Belt Hand Techniques)
 class Category (models.Model):
     slug            = models.SlugField(blank = True)
     name            = models.CharField(max_length=20)
     position        = models.IntegerField()
-    requirements    = models.ManyToManyField(Requirement)
+    requirement    = models.ManyToManyField(Requirement)
+    rank            = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return "%s %s" % (self.rank, self.name)
 
     @property
     def requirements(self):
-        return self.requirements.all().order_by('position')
-
-class Rank (models.Model):
-    slug        = models.SlugField(blank=True)
-    degree       = models.CharField(max_length = 20)
-    color        = models.CharField(max_length = 20)
-    position     = models.IntegerField()
-    categories   = models.ManyToManyField(Category)
-
-    def __str__(self):
-        return self.color
-
-    @property
-    def categories(self):
-        return self.categories.all().order_by('position')
-    
-    @property
-    def rank_elegibility(self):
-        return self.elegibility_set.all().order_by('position')
-
-class Eligibility (models.Model):
-    summary     = models.CharField(max_length = 20)
-    position    = models.IntegerField()
-    desc        = models.TextField(blank = True)
+        return self.requirement.all().order_by('position')
