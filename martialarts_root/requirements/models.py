@@ -1,7 +1,5 @@
 from django.db import models
 
-# This comment is here
-
 class Rank (models.Model):
     slug         = models.SlugField(blank=True)
     degree       = models.CharField(max_length = 20)
